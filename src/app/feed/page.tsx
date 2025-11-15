@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { supabaseBrowser } from "../supabase/client";
+import { useRouter } from "next/navigation";
 import { CATEGORY_OPTIONS, CITY_OPTIONS } from "../lib/constants";
 
 type RequestRow = {
@@ -23,6 +24,7 @@ function toErrorString(x: unknown): string {
 }
 
 export default function FeedPage() {
+   const router = useRouter();
   const [requests, setRequests] = useState<RequestRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
@@ -37,6 +39,15 @@ export default function FeedPage() {
 
   useEffect(() => {
     (async () => {
+      const sb = supabaseBrowser();
+      const { data } = await sb.auth.getUser();
+
+      if (!data?.user) {
+        // not signed in → send to WedFlexer sign-in
+        router.push("/auth/signin?role=wedflexer&next=/feed");
+        return;
+      }
+            // if we get here, user is signed in → now load the feed
       try {
         setLoading(true);
         setErr(null);
@@ -64,7 +75,7 @@ export default function FeedPage() {
         setLoading(false);
       }
     })();
-  }, [category, location, sortField, sortOrder]);
+  }, [category, location, sortField, sortOrder, router]);
 
   return (
     <main className="max-w-6xl mx-auto p-6 space-y-6">
@@ -161,7 +172,7 @@ export default function FeedPage() {
       {err && <p className="text-red-600 break-all">Error: {err}</p>}
 
       {!loading && !err && requests.length === 0 && (
-        <p className="text-sm opacity-70">No offers match your filters.</p>
+        <p className="text-sm opacity-70">No matches. Expand your filters.</p>
       )}
 
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
