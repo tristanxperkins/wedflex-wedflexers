@@ -10,30 +10,6 @@ export default function SignInPage() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Where to send them AFTER auth
-  const [nextUrl, setNextUrl] = useState("/feed"); // default for generic sign-in
-  const [role, setRole] = useState("wedflexer");
-
-  // Read next + role from query string on the client
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const params = new URLSearchParams(window.location.search);
-    const rawNext = params.get("next");
-    const rawRole = params.get("role");
-
-    if (rawRole) setRole(rawRole);
-
-    if (rawNext) {
-      // Handle both encoded or plain versions
-      try {
-        setNextUrl(decodeURIComponent(rawNext));
-      } catch {
-        setNextUrl(rawNext);
-      }
-    }
-  }, []);
-
   async function sendLink(e: React.FormEvent) {
     e.preventDefault();
     setSending(true);
@@ -41,17 +17,16 @@ export default function SignInPage() {
     try {
       const sb = supabaseBrowser();
 
-      // Build callback URL with next + role preserved
-      const callback = new URL("/auth/callback", window.location.origin);
-      callback.searchParams.set("next", nextUrl);     // e.g. "/earn-money?step=3" or "/feed"
-      callback.searchParams.set("role", role);
-
+     // This will be "https://wedflex-wedflexers.vercel.app" in that app
+      const redirectBase = `${window.location.origin}/auth/callback`;
       const { error } = await sb.auth.signInWithOtp({
         email,
-        options: { emailRedirectTo: callback.toString() },
+        options: {
+          emailRedirectTo: redirectBase, // supabase-js v2
+              },
       });
-
       if (error) throw error;
+
 
       setSent(true);
     } catch (err) {
