@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-// RELATIVE import = robust on Vercel
 import { supabaseBrowser } from "../../supabase/client";
 
 export default function SignInPage() {
@@ -10,6 +9,29 @@ export default function SignInPage() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const [nextUrl, setNextUrl] = useState("/feed"); // default for normal sign-in
+  const [role, setRole] = useState("wedflexer");
+
+  // Read next + role from the URL on the client
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const params = new URLSearchParams(window.location.search);
+    const rawNext = params.get("next");
+    const rawRole = params.get("role");
+
+    if (rawRole) setRole(rawRole);
+
+    if (rawNext) {
+      // handle encoded or plain values
+      try {
+        setNextUrl(decodeURIComponent(rawNext));
+      } catch {
+        setNextUrl(rawNext);
+      }
+    }
+  }, []);
+
   async function sendLink(e: React.FormEvent) {
     e.preventDefault();
     setSending(true);
@@ -17,16 +39,19 @@ export default function SignInPage() {
     try {
       const sb = supabaseBrowser();
 
-     // This will be "https://wedflex-wedflexers.vercel.app" in that app
-      const redirectBase = `${window.location.origin}/auth/callback`;
+      // Build callback URL with `next` + `role` baked in
+      const callback = new URL("/auth/callback", window.location.origin);
+      callback.searchParams.set("next", nextUrl);
+      callback.searchParams.set("role", role);
+
       const { error } = await sb.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: redirectBase, // supabase-js v2
-              },
+          emailRedirectTo: callback.toString(),
+        },
       });
-      if (error) throw error;
 
+      if (error) throw error;
 
       setSent(true);
     } catch (err) {

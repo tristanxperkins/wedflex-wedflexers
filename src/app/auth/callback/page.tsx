@@ -13,33 +13,40 @@ export default function AuthCallbackPage() {
 
       const url = new URL(window.location.href);
       const supabase = supabaseBrowser();
-
       const params = url.searchParams;
 
-      // Where do we go after auth?
-      const next = params.get("next") || "/feed"; // <-- change to "/dashboard/wedflexer" if you prefer
-
-      const hash = url.hash.startsWith("#") ? url.hash.slice(1) : url.hash;
-      const search = url.search.startsWith("?") ? url.search.slice(1) : url.search;
-      const hasCode = params.get("code");
+      // Decide where to go after auth
+      const next = params.get("next") || "/feed";
 
       try {
-        let error: unknown = null;
+        // 1) If we already have a session, just go there
+        const { data: sessionData } = await supabase.auth.getSession();
+        if (sessionData.session) {
+          router.replace(next);
+          return;
+        }
 
-        if (hash) {
-          // Magic link flow – tokens in hash fragment
-          const res = await supabase.auth.exchangeCodeForSession(hash);
-          error = res.error;
-        } else if (hasCode) {
-          // OAuth-style flow – tokens in query string
-          const res = await supabase.auth.exchangeCodeForSession(search);
-          error = res.error;
-        } else {
+        // 2) Otherwise, try to exchange tokens from the URL
+        const hash = url.hash.startsWith("#") ? url.hash.slice(1) : "";
+        const code = params.get("code");
+
+        let exchangeArg: string | null = null;
+
+        // Newer flows usually use `code` in the query string
+        if (code) {
+          exchangeArg = code;
+        } else if (hash) {
+          // Older / hash-based flows – pass the hash fragment
+          exchangeArg = hash;
+        }
+
+        if (!exchangeArg) {
           // Nothing to exchange – probably hit directly
           router.replace("/auth/signin");
           return;
         }
 
+        const { error } = await supabase.auth.exchangeCodeForSession(exchangeArg);
         if (error) {
           console.error("Supabase exchange error:", error);
           router.replace(
@@ -51,7 +58,7 @@ export default function AuthCallbackPage() {
           return;
         }
 
-        // Success – go wherever initiated the auth flow
+        // 3) Success – go to the original destination
         router.replace(next);
       } catch (e) {
         console.error("Auth callback fatal error:", e);
