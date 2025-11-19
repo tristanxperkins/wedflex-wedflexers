@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // RELATIVE import = robust on Vercel
 import { supabaseBrowser } from "../../supabase/client";
 
@@ -10,6 +10,29 @@ export default function SignInPage() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // NEW: store next + role from the query string
+  const [nextUrl, setNextUrl] = useState("/feed"); // sensible default for normal sign-in
+  const [role, setRole] = useState("wedflexer");
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const params = new URLSearchParams(window.location.search);
+    const rawNext = params.get("next");
+    const rawRole = params.get("role");
+
+    if (rawRole) setRole(rawRole);
+
+    if (rawNext) {
+      // handle both encoded and plain values
+      try {
+        setNextUrl(decodeURIComponent(rawNext));
+      } catch {
+        setNextUrl(rawNext);
+      }
+    }
+  }, []);
+
   async function sendLink(e: React.FormEvent) {
     e.preventDefault();
     setSending(true);
@@ -17,12 +40,14 @@ export default function SignInPage() {
     try {
       const sb = supabaseBrowser();
 
-      // Works on localhost & prod automatically
-      const redirectBase = `${window.location.origin}/auth/callback`;
+      // ✅ Build callback URL that preserves next + role
+      const callback = new URL("/auth/callback", window.location.origin);
+      callback.searchParams.set("next", nextUrl); // e.g. "/earn-money?step=3" or "/feed"
+      callback.searchParams.set("role", role);
 
       const { error } = await sb.auth.signInWithOtp({
         email,
-        options: { emailRedirectTo: redirectBase },
+        options: { emailRedirectTo: callback.toString() },
       });
       if (error) throw error;
 
@@ -40,7 +65,9 @@ export default function SignInPage() {
 
       {sent ? (
         <div className="rounded border p-4 bg-green-50">
-          <p>A link to sign in was sent Magic link sent to <strong>{email}</strong>.</p>
+          <p>
+            A link to sign in was sent to <strong>{email}</strong>.
+          </p>
         </div>
       ) : (
         <form onSubmit={sendLink} className="space-y-4">
