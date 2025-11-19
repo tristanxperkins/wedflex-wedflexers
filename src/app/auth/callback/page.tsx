@@ -15,7 +15,7 @@ export default function AuthCallbackPage() {
       const supabase = supabaseBrowser();
 
       // 1) Figure out where to go after auth
-      const next = url.searchParams.get("next") || "/dashboard/couple";
+      const next = url.searchParams.get("next") || "/dashboard/wedflexer";
 
       // 2) If we already have a session, just go there
       try {

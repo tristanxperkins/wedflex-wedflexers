@@ -118,7 +118,7 @@ export default function EarnMoneyPage() {
             "Locals with an eye for floral design",
             "Home cooks who love feeding people",
             "Confident public speakers and MCs",
-            "Hosts with a great backyard or space",
+            "Venue Hosts with a great backyard or space",
             "Type-A organizers and day-of helpers",
             "DIY crafters and décor geniuses",
           ].map((label) => (
@@ -256,7 +256,7 @@ export default function EarnMoneyPage() {
                   done, we will bring you back here to finish setup.
                 </p>
                 <Link
-                  href="/auth/signin?role=wedflexer&next=/earn-money?step=2"
+                  href={`/auth/signin?role=wedflexer&next=${encodeURIComponent("/earn-money?step=2")}`}
                   className="inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium bg-purple-700 text-white hover:bg-purple-800"
                 >
                   Sign in / Create account
@@ -300,7 +300,7 @@ export default function EarnMoneyPage() {
             </div>
 
             <p className="text-xs text-slate-500">
-              Once you have connected payouts and finished your profile, you will be
+              Once you have connected payouts and finished your profile, you are
               ready to browse offers and start earning money on WedFlex! 🎉
             </p>
           </div>

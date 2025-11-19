@@ -30,7 +30,7 @@ export default function Nav() {
   return (
     <nav className="w-full flex items-center justify-between px-6 py-4 border-b bg-white">
       <Link href="/" className="text-xl font-bold text-purple-700">
-        WedFlexer
+        WedFlex
       </Link>
 
       <div className="flex items-center gap-6 text-sm font-medium">

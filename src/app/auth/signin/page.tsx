@@ -40,7 +40,7 @@ export default function SignInPage() {
 
       {sent ? (
         <div className="rounded border p-4 bg-green-50">
-          <p>Magic link sent to <strong>{email}</strong>.</p>
+          <p>A link to sign in was sent Magic link sent to <strong>{email}</strong>.</p>
         </div>
       ) : (
         <form onSubmit={sendLink} className="space-y-4">

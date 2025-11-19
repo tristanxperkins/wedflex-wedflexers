@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 
 export const metadata: Metadata = {
   title: "WedFlex",
-  description: "Your Wedding. Your Town. Your WedFlex.",
+  description: "Make Money off of Weddings",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
