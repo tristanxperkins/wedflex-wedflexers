@@ -10,10 +10,11 @@ export default function SignInPage() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // NEW: store next + role from the query string
-  const [nextUrl, setNextUrl] = useState("/feed"); // sensible default for normal sign-in
+  // Where to send them AFTER auth
+  const [nextUrl, setNextUrl] = useState("/feed"); // default for generic sign-in
   const [role, setRole] = useState("wedflexer");
 
+  // Read next + role from query string on the client
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -24,7 +25,7 @@ export default function SignInPage() {
     if (rawRole) setRole(rawRole);
 
     if (rawNext) {
-      // handle both encoded and plain values
+      // Handle both encoded or plain versions
       try {
         setNextUrl(decodeURIComponent(rawNext));
       } catch {
@@ -40,15 +41,16 @@ export default function SignInPage() {
     try {
       const sb = supabaseBrowser();
 
-      // ✅ Build callback URL that preserves next + role
+      // Build callback URL with next + role preserved
       const callback = new URL("/auth/callback", window.location.origin);
-      callback.searchParams.set("next", nextUrl); // e.g. "/earn-money?step=3" or "/feed"
+      callback.searchParams.set("next", nextUrl);     // e.g. "/earn-money?step=3" or "/feed"
       callback.searchParams.set("role", role);
 
       const { error } = await sb.auth.signInWithOtp({
         email,
         options: { emailRedirectTo: callback.toString() },
       });
+
       if (error) throw error;
 
       setSent(true);

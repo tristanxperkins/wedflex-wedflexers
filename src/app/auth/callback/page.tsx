@@ -14,34 +14,24 @@ export default function AuthCallbackPage() {
       const url = new URL(window.location.href);
       const supabase = supabaseBrowser();
 
-      // 1) Figure out where to go after auth
-      const next = url.searchParams.get("next") || "/dashboard/wedflexer";
+      const params = url.searchParams;
 
-      // 2) If we already have a session, just go there
-      try {
-        const { data: sessionData } = await supabase.auth.getSession();
-        if (sessionData.session) {
-          router.replace(next);
-          return;
-        }
-      } catch {
-        // ignore and fall through to exchange
-      }
+      // Where do we go after auth?
+      const next = params.get("next") || "/feed"; // <-- change to "/dashboard/wedflexer" if you prefer
 
-      // 3) Try to exchange the auth info from URL
       const hash = url.hash.startsWith("#") ? url.hash.slice(1) : url.hash;
       const search = url.search.startsWith("?") ? url.search.slice(1) : url.search;
-      const hasCode = url.searchParams.get("code");
+      const hasCode = params.get("code");
 
       try {
-        let error = null as unknown;
+        let error: unknown = null;
 
         if (hash) {
-          // Magic link / email flow – Supabase puts tokens in the hash fragment
+          // Magic link flow – tokens in hash fragment
           const res = await supabase.auth.exchangeCodeForSession(hash);
           error = res.error;
         } else if (hasCode) {
-          // PKCE / OAuth-style flow – pass the full query string
+          // OAuth-style flow – tokens in query string
           const res = await supabase.auth.exchangeCodeForSession(search);
           error = res.error;
         } else {
@@ -61,7 +51,7 @@ export default function AuthCallbackPage() {
           return;
         }
 
-        // 4) Success – go to funnel destination
+        // Success – go wherever initiated the auth flow
         router.replace(next);
       } catch (e) {
         console.error("Auth callback fatal error:", e);
