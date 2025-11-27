@@ -7,13 +7,13 @@ import UploadInput from "../../../components/UploadInput";
 import DashboardSidebar from "../../../components/DashboardSidebar";
 
 type Profile = {
-  id: string;
+  user_id: string;
   avatar_url: string | null;
   intro: string | null;
-  services: string[] | null;   
-  skills: string[] | null;     
-  phone: string | null;        
-  city: string | null;         
+  services: string[] | null;
+  skills: string[] | null;
+  phone: string | null;
+  city: string | null;
 };
 
 const CITIES = [
@@ -27,7 +27,6 @@ const CITIES = [
 ] as const;
 
 const SKILL_TAGS = [
-  // group broadly; adjust to your PDF list
   "Taking pictures or videos",
   "Videography",
   "Recording social media content",
@@ -68,7 +67,6 @@ export default function WedflexerProfilePage() {
   const [msg, setMsg] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
 
-  // computed
   const selectedSkills = useMemo(() => new Set(p?.skills ?? []), [p?.skills]);
 
   useEffect(() => {
@@ -77,24 +75,43 @@ export default function WedflexerProfilePage() {
         const sb = supabaseBrowser();
         const { data: me } = await sb.auth.getUser();
         if (!me?.user) throw new Error("Not authenticated");
+
         const uid = me.user.id;
 
-        // load profile
+        // 🔹 Load existing wedflexer profile, or initialize a blank one
         const { data, error } = await sb
-          .from("profiles")
-          .select("id, avatar_url, intro, services, skills, phone, city")
-          .eq("id", uid)
-          .single();
-        if (error) throw error;
-        setP((data ?? null) as Profile);
+          .from("wedflexer_profiles")
+          .select("*")
+          .eq("user_id", uid);
 
-        // load portfolio thumbnails (public bucket)
-        const { data: list, error: lErr } = await sb.storage
+        if (error) throw error;
+
+        const row = data?.[0];
+
+        if (row) {
+          setP(row as Profile);
+        } else {
+          setP({
+            user_id: uid,
+            avatar_url: null,
+            intro: "",
+            services: [],
+            skills: [],
+            phone: null,
+            city: null,
+          });
+        }
+
+        // 🔹 Load portfolio images
+        const { data: list } = await sb.storage
           .from("portfolio")
           .list(`${uid}`, { sortBy: { column: "created_at", order: "desc" } });
-        if (!lErr && list) {
+
+        if (list) {
           const urls = list.map(
-            (it) => sb.storage.from("portfolio").getPublicUrl(`${uid}/${it.name}`).data.publicUrl
+            (it) =>
+              sb.storage.from("portfolio").getPublicUrl(`${uid}/${it.name}`).data
+                .publicUrl,
           );
           setPortfolio(urls);
         }
@@ -112,10 +129,8 @@ export default function WedflexerProfilePage() {
     setP({ ...p, skills: Array.from(current) });
   }
 
-  // basic phone sanitizer (keeps digits, formats lightly)
   function formatPhone(raw: string): string {
-    const digits = raw.replace(/\D/g, "").slice(0, 15); // allow intl-ish
-    // simple US style grouping when 10+ digits
+    const digits = raw.replace(/\D/g, "").slice(0, 15);
     if (digits.length === 10) {
       return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
     }
@@ -129,17 +144,20 @@ export default function WedflexerProfilePage() {
       setMsg(null);
       setErr(null);
       const sb = supabaseBrowser();
-      const { error } = await sb
-        .from("profiles")
-        .update({
-          avatar_url: p.avatar_url ?? null,
-          intro: p.intro ?? "",
-          services: p.services ?? [], // optional if used elsewhere
+
+      const { error } = await sb.from("wedflexer_profiles").upsert(
+        {
+          user_id: p.user_id,
+          avatar_url: p.avatar_url,
+          intro: p.intro,
+          services: p.services ?? [],
           skills: p.skills ?? [],
-          phone: p.phone ?? null,
-          city: p.city ?? null,
-        })
-        .eq("id", p.id);
+          phone: p.phone,
+          city: p.city,
+        },
+        { onConflict: "user_id" },
+      );
+
       if (error) throw error;
       setMsg("Saved!");
     } catch (e) {
@@ -153,6 +171,7 @@ export default function WedflexerProfilePage() {
     <RequireAuth>
       <main className="max-w-6xl mx-auto p-6 grid gap-6 lg:grid-cols-[240px_1fr]">
         <DashboardSidebar role="wedflexer" />
+
         <section className="space-y-6">
           <header>
             <h1 className="text-2xl font-semibold">WedFlexer Profile</h1>
@@ -166,7 +185,7 @@ export default function WedflexerProfilePage() {
             <p>Loading…</p>
           ) : (
             <>
-              {/* Avatar + upload */}
+              {/* Avatar */}
               <div className="flex items-center gap-4">
                 <img
                   src={p.avatar_url || "/avatar-placeholder.png"}
@@ -199,7 +218,9 @@ export default function WedflexerProfilePage() {
                     className="w-full border rounded px-3 py-2"
                     inputMode="tel"
                     value={p.phone ?? ""}
-                    onChange={(e) => setP({ ...p, phone: formatPhone(e.target.value) })}
+                    onChange={(e) =>
+                      setP({ ...p, phone: formatPhone(e.target.value) })
+                    }
                     placeholder="(555) 555-5555"
                   />
                 </label>
@@ -209,7 +230,7 @@ export default function WedflexerProfilePage() {
                   <select
                     className="w-full border rounded px-3 py-2 bg-white"
                     value={p.city ?? ""}
-                    onChange={(e) => setP({ ...p, city: e.target.value || null })}
+                    onChange={(e) => setP({ ...p, city: e.target.value })}
                   >
                     <option value="">Select your city…</option>
                     {CITIES.map((c) => (
@@ -221,9 +242,11 @@ export default function WedflexerProfilePage() {
                 </label>
               </div>
 
-              {/* Skills (select all that apply) */}
+              {/* Skills */}
               <div>
-                <div className="text-sm mb-2">Skills & Services (select all that apply)</div>
+                <div className="text-sm mb-2">
+                  Skills & Services (select all that apply)
+                </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                   {SKILL_TAGS.map((tag) => {
                     const on = selectedSkills.has(tag);
@@ -250,7 +273,7 @@ export default function WedflexerProfilePage() {
                 </p>
               </div>
 
-              {/* Portfolio uploader + grid */}
+              {/* Portfolio */}
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <h2 className="font-semibold">Portfolio</h2>
@@ -258,9 +281,10 @@ export default function WedflexerProfilePage() {
                     bucket="portfolio"
                     label="Upload portfolio"
                     multiple
-                    onUploaded={(url) => setPortfolio((arr) => [url, ...arr])}
+                    onUploaded={(url) => setPortfolio((a) => [url, ...a])}
                   />
                 </div>
+
                 {portfolio.length === 0 ? (
                   <p className="text-sm opacity-70">No images yet.</p>
                 ) : (
