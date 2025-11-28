@@ -49,7 +49,7 @@ export default function MissionPage() {
         {/* Right: image card */}
         <div className="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg">
           <Image
-            src="public/images/Weddings-are-a-ripoff.png"
+            src="/images/Weddings-are-a-ripoff.png"
             alt="Influencers are sick of it"
             fill
             className="object-cover"
@@ -113,7 +113,7 @@ export default function MissionPage() {
       <section className="max-w-5xl mx-auto px-4 pb-12 md:pb-16">
         <div className="relative h-64 md:h-80 rounded-3xl overflow-hidden shadow-lg">
           <Image
-            src="/public/images/WedFlex-in-action.png"
+            src="/images/WedFlex-in-action.png"
             alt="Community of WedFlexers supporting a wedding"
             fill
             className="object-cover"
@@ -126,7 +126,7 @@ export default function MissionPage() {
       </section>
 
       {/* Purple CTA band */}
-      <section className="mt-12 bg-brand-primary-light text-purple">
+      <section className="mt-12 bg-brand-primary/5 text-purple">
         <div className="max-w-6xl mx-auto px-4 py-10 md:py-14 text-center">
           <h2 className="text-2xl md:text-3xl font-extrabold mb-2">
             Join the WedFlex Revolution Today!

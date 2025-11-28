@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
 
-         <footer className="mt-12 bg-brand-primary-dark text-white">
+         <footer className="mt-12 bg-brand-primary text-white">
           <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
             <div className="flex items-center gap-2 text-left">
               <span className="font-bold text-lg">WedFlex</span>

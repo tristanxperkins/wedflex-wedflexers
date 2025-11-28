@@ -60,7 +60,7 @@ export default function HomePage() {
         {/* Right column: wedding image */}
         <div className="relative h-72 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg">
           <Image
-            src="/public/images/WedFlexers-helping-a-couple.png"
+            src="/images/WedFlexers-helping-a-couple.png"
             alt="WedFlexers helping a couple"
             width = {2000}
             height= {1200}
@@ -71,7 +71,7 @@ export default function HomePage() {
 
 
       {/* 💜 PURPLE BANNER — AFTER MAIN CONTENT */}
-      <section className="w-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white">
+      <section className="mt-12 bg-brand-primary/5 text-brand-primary-dark">
         <div className="max-w-6xl mx-auto px-4 py-16 text-center">
           <h1 className="text-3xl md:text-4xl font-extrabold mb-3">
             WedFlex is for Marriage and Community.

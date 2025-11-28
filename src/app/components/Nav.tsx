@@ -29,7 +29,7 @@ export default function Nav() {
 
   return (
     <nav className="w-full flex items-center justify-between px-6 py-4 border-b bg-white">
-<Link href="/" className="text-xl font-bold text-brand-primary">
+<Link href="/" className="text-2xl font-bold text-brand-primary">
         WedFlex
       </Link>
 
