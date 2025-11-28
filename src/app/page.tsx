@@ -48,12 +48,12 @@ export default function WedFlexerHome() {
             {/* TRUST BAR */}
             <div className="flex flex-wrap items-center gap-3 text-xs text-brand-charcoal/70">
               <span className="uppercase tracking-[0.2em] font-semibold text-[10px]">
-                Popular wedding skills
+                Popular WedFlexer skills
               </span>
 
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 rounded-full bg-brand-primary/10 text-[11px] flex items-center gap-1.5">
-                  📸 <span>Photo & video</span>
+                  📸 <span>Photography</span>
                 </span>
 
                 <span className="px-3 py-1 rounded-full bg-brand-primary/10 text-[11px] flex items-center gap-1.5">
@@ -74,8 +74,8 @@ export default function WedFlexerHome() {
           {/* RIGHT IMAGE */}
           <div className="relative h-[300px] md:h-[380px] lg:h-[420px] rounded-3xl overflow-hidden shadow-xl">
             <Image
-              src="/images/wedflexer-hero.jpg"
-              alt="WedFlexers helping a couple at their wedding"
+              src="/images/Monique-Coordinating.png"
+              alt="Monique from Atlanta coordinates the day"
               fill
               className="object-cover object-center"
               priority
@@ -83,46 +83,8 @@ export default function WedFlexerHome() {
           </div>
         </section>
 
-        {/* ------------------------------------------------------------ */}
-        {/* SECTION 2: FEATURE PILLARS */}
-        {/* ------------------------------------------------------------ */}
-        <section className="space-y-6">
-          <h2 className="text-xl md:text-2xl font-bold text-brand-primary">
-            Why earn with WedFlex?
-          </h2>
-
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl border border-brand-primary/20 bg-brand-primary/5 p-4 space-y-2">
-              <p className="font-semibold text-brand-primary text-sm">
-                Couples post offers, you bring the magic
-              </p>
-              <p className="text-xs text-brand-charcoal">
-                Real couples post requests — you choose which gigs fit your skills.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-brand-primary/20 bg-white p-4 space-y-2">
-              <p className="font-semibold text-brand-primary text-sm">
-                Control your schedule
-              </p>
-              <p className="text-xs text-brand-charcoal">
-                Take offers only when it works for you. No commitments.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-brand-primary/20 bg-white p-4 space-y-2">
-              <p className="font-semibold text-brand-primary text-sm">
-                Get paid securely with Stripe
-              </p>
-              <p className="text-xs text-brand-charcoal">
-                Payments go directly to your bank. Fast, reliable, professional.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ------------------------------------------------------------ */}
-        {/* SECTION 3: TWO-COLUMN BLOCKS */}
+                {/* ------------------------------------------------------------ */}
+        {/* SECTION 2: TWO-COLUMN BLOCKS */}
         {/* ------------------------------------------------------------ */}
         <section className="grid gap-8 md:grid-cols-2">
           {/* LEFT - HOW IT WORKS */}
@@ -153,7 +115,7 @@ export default function WedFlexerHome() {
         </section>
 
         {/* ------------------------------------------------------------ */}
-        {/* SECTION 4: EARNINGS SECTION */}
+        {/* SECTION 3: EARNINGS SECTION */}
         {/* ------------------------------------------------------------ */}
         <section className="grid gap-10 lg:grid-cols-[1.1fr_1fr] items-center">
           {/* LEFT */}
@@ -163,7 +125,7 @@ export default function WedFlexerHome() {
             </h2>
 
             <p className="text-sm text-brand-charcoal max-w-md">
-              Turn your existing talents into flexible, meaningful income — on your terms.
+              Start monetizing your skills on your own terms.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-3">
@@ -171,7 +133,7 @@ export default function WedFlexerHome() {
                 <p className="uppercase tracking-wide text-xs font-semibold">
                   Flexible schedule
                 </p>
-                <p className="text-sm">Work when you want — no minimums.</p>
+                <p className="text-sm">Work when you want.</p>
               </div>
 
               <div className="rounded-2xl p-4 bg-brand-primary/10 border border-brand-primary/20 space-y-1">
@@ -179,7 +141,7 @@ export default function WedFlexerHome() {
                   Control your earnings
                 </p>
                 <p className="text-sm text-brand-charcoal">
-                  Accept only the offers that fit your rate.
+                  Accept only the offers that you desire.
                 </p>
               </div>
 
@@ -201,8 +163,8 @@ export default function WedFlexerHome() {
           {/* RIGHT IMAGE */}
           <div className="relative h-[250px] md:h-[320px] rounded-3xl overflow-hidden shadow-lg">
             <Image
-              src="/images/wedflex-earnings.jpg"
-              alt="WedFlexer earning money helping with a wedding"
+              src="/images/WedFlexer-Collage.png"
+              alt="WedFlexers collage"
               fill
               className="object-cover object-center"
             />
@@ -210,7 +172,7 @@ export default function WedFlexerHome() {
         </section>
 
         {/* ------------------------------------------------------------ */}
-        {/* SECTION 5: REQUIREMENTS */}
+        {/* SECTION 4: REQUIREMENTS */}
         {/* ------------------------------------------------------------ */}
         <section className="space-y-10 text-center">
           <h2 className="text-xl md:text-2xl font-bold text-brand-primary">
@@ -221,21 +183,22 @@ export default function WedFlexerHome() {
             <div className="rounded-2xl border border-brand-primary/20 p-4 bg-white space-y-2">
               <p className="font-bold text-brand-primary text-sm">Legal eligibility</p>
               <p className="text-xs text-brand-charcoal">
-                Must be 18+ and eligible to work as a 1099 contractor.
+                Must be 18+ and eligible to work as a 1099 contractor. You must maintain the licenses required by your city or state
+                to perform certain services (i.e., officiants must be legally ordained).
               </p>
             </div>
 
             <div className="rounded-2xl border border-brand-primary/20 p-4 bg-white space-y-2">
               <p className="font-bold text-brand-primary text-sm">Transportation</p>
               <p className="text-xs text-brand-charcoal">
-                Must have a reliable way to get to event locations.
+                Must have a reliable way to get to event locations or complete your service.
               </p>
             </div>
 
             <div className="rounded-2xl border border-brand-primary/20 p-4 bg-white space-y-2">
               <p className="font-bold text-brand-primary text-sm">Professionalism</p>
               <p className="text-xs text-brand-charcoal">
-                Show up, communicate well, and deliver what you promise.
+                Communicate well, show up on time, and deliver what you promise.
               </p>
             </div>
           </div>
@@ -244,7 +207,7 @@ export default function WedFlexerHome() {
             href="/earn-money?step=1"
             className="inline-flex px-6 py-2.5 rounded-full text-sm font-semibold bg-brand-primary text-white hover:bg-brand-primary-dark shadow-sm transition"
           >
-            Become a WedFlexer
+            Ready to WedFlex?
           </Link>
         </section>
       </div>
