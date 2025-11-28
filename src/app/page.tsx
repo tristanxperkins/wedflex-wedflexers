@@ -61,12 +61,12 @@ export default function HomePage() {
         {/* Right column: wedding image */}
         <div className="relative h-72 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg">
           <Image
-            src="public/images/WedFlexers helping a couple.png"
+            src="public/images/WedFlexers-helping-a-couple.png"
             alt="WedFlexers helping a couple"
-            fill
-            className="object-cover"
-            priority
-          />
+            width = {2000}
+            height= {1200}
+            className="w-full h-auto object-cover rounded-3xl"
+              />
         </div>
       </section>
 
@@ -79,8 +79,9 @@ export default function HomePage() {
           </h1>
 
           <p className="max-w-3xl mx-auto text-sm md:text-lg text-purple-100">
-            WedFlex flips the script on weddings — couples name their price,
-            talented locals bring the magic. Finally - a win-win for everyone.
+            Imagine a world where the wedding industry was actually about marriage. 
+            WedFlex puts marriage back at the center and gives everyday people the opportunity
+            to make money supporting the families in their community. It's a win-win for everyone. 
           </p>
         </div>
       </section>
