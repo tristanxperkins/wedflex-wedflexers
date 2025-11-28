@@ -63,37 +63,39 @@ export default function HomePage() {
             src="/images/WedFlexers-helping-a-couple.png"
             alt="WedFlexers helping a couple"
             fill
-            className="w-full h-auto object-cover object-bottom rounded-3xl"
+            className="w-full h-auto object-cover rounded-3xl"
               />
         </div>
       </section>
 
 
       {/* 💜 PURPLE BANNER — AFTER MAIN CONTENT */}
-      <section className="mt-12 bg-brand-primary/5 text-brand-primary">
+      <section className="mt-12 bg-brand-primary/5 text-black">
         <div className="max-w-6xl mx-auto px-4 py-16 text-center">
           <h1 className="text-3xl md:text-4xl font-extrabold mb-3">
             WedFlex is for Marriage and Community.
           </h1>
 
-          <p className="max-w-3xl mx-auto text-sm md:text-lg text-brand-primary">
+          <p className="max-w-3xl mx-auto text-sm md:text-lg text-brand-charcoal">
             WedFlex puts marriage back at the centerof the wedding industry and
              gives everyday people the opportunity
             to make money supporting the families in their community. It&apos;s a win-win for everyone. 
           </p>
-                    <Link
+                    <div className="flex flex-wrap gap-3 mb-8">
+            <Link
               href="/earn-money"
-              className="inline-flex items-center rounded-lg px-5 py-2.5 text-sm font-semibold bg-purple-700 text-white hover:bg-purple-800"
+              className="inline-flex items-center rounded-lg px-5 py-2.5 text-sm font-semibold bg-brand-primary text-white hover:bg-brand-primary-dark"
             >
               Start earning money
             </Link>
 
             <Link
               href="/auth/signin?role=wedflexer&next=/dashboard"
-              className="inline-flex items-center rounded-lg px-5 py-2.5 text-sm font-semibold border border-purple-700 text-purple-700 hover:bg-purple-50"
+              className="inline-flex items-center rounded-lg px-5 py-2.5 text-sm font-semibold border border-brand-primary text-brand-primary hover:bg-white"
             >
               Already a WedFlexer? Sign in!
             </Link>
+          </div>
           </div>
       </section>
     </>

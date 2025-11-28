@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+// RELATIVE import = robust on Vercel
 import { supabaseBrowser } from "../../supabase/client";
 
 export default function SignInPage() {
@@ -9,50 +10,23 @@ export default function SignInPage() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [nextUrl, setNextUrl] = useState("/feed"); // default for normal sign-in
-  const [role, setRole] = useState("wedflexer");
-
-  // Read next + role from the URL on the client
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const params = new URLSearchParams(window.location.search);
-    const rawNext = params.get("next");
-    const rawRole = params.get("role");
-
-    if (rawRole) setRole(rawRole);
-
-    if (rawNext) {
-      // handle encoded or plain values
-      try {
-        setNextUrl(decodeURIComponent(rawNext));
-      } catch {
-        setNextUrl(rawNext);
-      }
-    }
-  }, []);
-
   async function sendLink(e: React.FormEvent) {
     e.preventDefault();
     setSending(true);
     setError(null);
+
     try {
       const sb = supabaseBrowser();
 
-      // Build callback URL with `next` + `role` baked in
-      const callback = new URL("/auth/callback", window.location.origin);
-      callback.searchParams.set("next", nextUrl);
-      callback.searchParams.set("role", role);
+      // Works on localhost & prod automatically
+      const redirectBase = `${window.location.origin}/auth/callback`;
 
       const { error } = await sb.auth.signInWithOtp({
         email,
-        options: {
-          emailRedirectTo: callback.toString(),
-        },
+        options: { emailRedirectTo: redirectBase },
       });
 
       if (error) throw error;
-
       setSent(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
@@ -62,54 +36,107 @@ export default function SignInPage() {
   }
 
   return (
-    <main className="max-w-md mx-auto p-6">
-      <h1 className="text-2xl font-semibold mb-4">Let&apos;s grab your account. We will send you a one-time link to sign in.</h1>
+    <main className="min-h-[70vh] bg-purple-50">
+      <div className="max-w-6xl mx-auto px-4 py-10 md:py-16">
+        <div className="grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-start">
+          {/* LEFT: Sign-in card */}
+          <section className="bg-white border border-purple-100 shadow-sm rounded-2xl p-6 md:p-8">
+            <p className="text-xs font-semibold tracking-[0.2em] text-purple-600 uppercase mb-2">
+              Sign in to WedFlex
+            </p>
+            <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
+              Let&apos;s grab your account.
+            </h1>
+            <p className="text-sm md:text-base text-slate-600 mb-6">
+              We&apos;ll send you a one-time secure link to sign in. No password to
+              remember, just your email.
+            </p>
 
-      {sent ? (
-        <div className="rounded border p-4 bg-green-50">
-          <p>
-            A link to sign in was sent to <strong>{email}</strong>.
-          </p>
-        </div>
-      ) : (
-        <form onSubmit={sendLink} className="space-y-4">
-          <div>
-            <label className="block text-sm mb-1">Email</label>
-            <input
-              type="email"
-              required
-              className="w-full border rounded px-3 py-2"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="youremail@example.com"
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={sending || !email}
-            className="bg-black text-white rounded px-4 py-2 disabled:opacity-60"
-          >
-            {sending ? "Sending…" : "Send one-time sign in link"}
-          </button>
-          {error && <p className="text-red-600 text-sm mt-2">Error: {error}</p>}
-        </form>
-      )}
-      {/* 💜 PURPLE BANNER — AFTER MAIN CONTENT */}
-      <section className="w-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white">
-        <div className="max-w-6xl mx-auto px-4 py-16 text-center">
-          <h1 className="text-3xl md:text-4xl font-extrabold mb-3">
-            You don&apos;t want to miss this.
-          </h1>
+            {sent ? (
+              <div className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">
+                <p className="font-semibold">Magic link sent ✉️</p>
+                <p className="mt-1 text-[13px] md:text-sm text-green-900/80">
+                  We emailed a one-time sign-in link to{" "}
+                  <span className="font-semibold">{email}</span>. Open it on this
+                  device to continue into your WedFlexer dashboard.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={sendLink} className="space-y-5">
+                <div>
+                  <label className="block text-sm font-medium text-slate-800 mb-1">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@example.com"
+                  />
+                </div>
 
-          <p className="max-w-6xl mx-auto px-4 py-12 grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-center">
-            WedFlex has launched in your city and that means things are about to get crazy.
-            The wedding industry has been overpriced and unfair to couples for far too long. 
-            WedFlex is a revolution that puts marriage back at the center of the industry and puts money
-            in the communities where marriages happen. Join us. Become a WedFlexer to make money off of weddings. 
-          </p>
+                <button
+                  type="submit"
+                  disabled={sending || !email}
+                  className="inline-flex items-center justify-center rounded-lg px-5 py-2.5 text-sm font-semibold bg-purple-700 text-white shadow-md disabled:opacity-60 hover:bg-purple-800 transition-colors"
+                >
+                  {sending ? "Sending magic link…" : "Send one-time sign in link"}
+                </button>
+
+                {error && (
+                  <p className="text-xs md:text-sm text-red-600">
+                    Error: {error}
+                  </p>
+                )}
+
+                <p className="text-[11px] md:text-xs text-slate-500">
+                  By continuing, you agree to receive a one-time sign-in link from
+                  WedFlex to this email address.
+                </p>
+              </form>
+            )}
+          </section>
+
+          {/* RIGHT: Brand / info column */}
+          <aside className="space-y-4 md:space-y-6">
+            {/* Gradient brand card */}
+            <div className="rounded-3xl bg-gradient-to-b from-purple-500 via-purple-600 to-purple-700 text-white p-6 md:p-8 shadow-lg flex flex-col justify-between min-h-[220px]">
+              <div className="space-y-2">
+                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-purple-100">
+                  WedFlexer perks
+                </p>
+                <h2 className="text-xl md:text-2xl font-extrabold">
+                  You don&apos;t want to miss this.
+                </h2>
+              </div>
+
+              <ul className="mt-4 space-y-1.5 text-sm text-purple-100/90">
+                <li>• Browse offers from couples in your city.</li>
+                <li>• Choose the gigs that fit your schedule and skills.</li>
+                <li>• Get paid securely through WedFlex after each event.</li>
+              </ul>
+
+              <p className="mt-4 text-xs text-purple-100/80">
+                Built for locals, not traditional vendors. Turn your talents into
+                cash helping couples get married.
+              </p>
+            </div>
+
+            {/* Security / reassurance card */}
+            <div className="rounded-2xl border border-purple-100 bg-white/80 backdrop-blur p-4 text-xs md:text-sm text-slate-700 shadow-sm">
+              <h3 className="font-semibold text-slate-900 mb-1">
+                Secure, one-time sign in 🔐
+              </h3>
+              <p>
+                We use passwordless magic links powered by Supabase. Your email is
+                only used to authenticate you into your WedFlexer account.
+              </p>
+            </div>
+          </aside>
         </div>
-      </section>
+      </div>
     </main>
-    
   );
 }
