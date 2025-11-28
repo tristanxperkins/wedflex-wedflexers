@@ -126,12 +126,12 @@ export default function MissionPage() {
       </section>
 
       {/* Purple CTA band */}
-      <section className="w-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white">
+      <section className="mt-12 bg-brand-primary-light text-purple">
         <div className="max-w-6xl mx-auto px-4 py-10 md:py-14 text-center">
           <h2 className="text-2xl md:text-3xl font-extrabold mb-2">
             Join the WedFlex Revolution Today!
           </h2>
-          <p className="max-w-2xl mx-auto text-sm md:text-base text-purple-100">
+          <p className="max-w-2xl mx-auto text-sm md:text-base text-brand-charcoal">
             Whether you&apos;re planning a wedding or ready to earn money as a WedFlexer,
             you can help eliminate the Wedding Tax ❌ and support marriages in your
             community.

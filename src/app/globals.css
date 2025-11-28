@@ -10,6 +10,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* 🔮 WedFlex brand colors */
+  --color-brand-charcoal: #403f40;
+  --color-brand-gray: #d3d3d3;
+  --color-brand-primary: #6a0dad;
+  --color-brand-primary-dark: #3a0d6d;
+  --color-brand-primary-light: #8249cc;
 }
 
 @media (prefers-color-scheme: dark) {

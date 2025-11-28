@@ -16,7 +16,7 @@ export default function HomePage() {
           </h2>
 
           <p className="text-slate-700 mb-6 max-w-xl">
-            Hundreds of everyday people in your community are monetizing their skills on WedFlex. You can become a WedFlexer right now!
+            Hundreds of everyday people in your community are monetizing their skills on WedFlex. You can, too. Become a WedFlexer right now.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">
