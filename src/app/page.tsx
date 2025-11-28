@@ -62,22 +62,21 @@ export default function HomePage() {
           <Image
             src="/images/WedFlexers-helping-a-couple.png"
             alt="WedFlexers helping a couple"
-            width = {2000}
-            height= {1200}
-            className="w-full h-auto object-cover rounded-3xl"
+            fill
+            className="w-full h-auto object-cover object-bottom rounded-3xl"
               />
         </div>
       </section>
 
 
       {/* 💜 PURPLE BANNER — AFTER MAIN CONTENT */}
-      <section className="mt-12 bg-brand-primary/5 text-brand-primary-dark">
+      <section className="mt-12 bg-brand-primary/5 text-brand-primary">
         <div className="max-w-6xl mx-auto px-4 py-16 text-center">
           <h1 className="text-3xl md:text-4xl font-extrabold mb-3">
             WedFlex is for Marriage and Community.
           </h1>
 
-          <p className="max-w-3xl mx-auto text-sm md:text-lg text-purple-100">
+          <p className="max-w-3xl mx-auto text-sm md:text-lg text-brand-primary">
             WedFlex puts marriage back at the centerof the wedding industry and
              gives everyday people the opportunity
             to make money supporting the families in their community. It&apos;s a win-win for everyone. 

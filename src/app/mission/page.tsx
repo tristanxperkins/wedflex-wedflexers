@@ -52,7 +52,7 @@ export default function MissionPage() {
             src="/images/Weddings-are-a-ripoff.png"
             alt="Influencers are sick of it"
             fill
-            className="object-cover"
+            className="object-cover object-top"
             priority
           />
         </div>
@@ -113,10 +113,10 @@ export default function MissionPage() {
       <section className="max-w-5xl mx-auto px-4 pb-12 md:pb-16">
         <div className="relative h-64 md:h-80 rounded-3xl overflow-hidden shadow-lg">
           <Image
-            src="/images/WedFlex-in-action.png"
+            src="/images/WedFlex-and-a-couple.png"
             alt="Community of WedFlexers supporting a wedding"
             fill
-            className="object-cover"
+            className="object-cover object-bottom"
           />
         </div>
         <p className="mt-3 text-center text-sm text-slate-600">
@@ -140,13 +140,13 @@ export default function MissionPage() {
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               href="https://wedflex-couples.vercel.app"
-              className="inline-flex items-center rounded-xl px-6 py-3 text-sm font-semibold bg-white text-purple-700 hover:bg-purple-50 shadow-md"
+              className="inline-flex items-center rounded-xl px-6 py-3 text-sm font-semibold bg-white text-brand-primary hover:bg-purple-50 shadow-md"
             >
               WedFlex Your Wedding →
             </Link>
             <Link
               href="/earn-money"
-              className="inline-flex items-center rounded-xl px-6 py-3 text-sm font-semibold border border-white/80 text-white hover:bg-white/10"
+              className="inline-flex items-center rounded-xl px-6 py-3 text-sm font-semibold bg-white text-brand-primary hover:bg-purple-50 shadow-md"
             >
               Become a WedFlexer →
             </Link>
