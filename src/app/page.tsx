@@ -169,7 +169,7 @@ export default function WedFlexerHome() {
   {/* RIGHT IMAGE */}
           <div className="relative h-[250px] md:h-[320px] rounded-3xl overflow-hidden shadow-lg">
             <Image
-              src="/images/wedflex-earnings.jpg"
+              src="/images/WedFlexer-Collage-Design.png"
               alt="WedFlexer earning money helping with a wedding"
               fill
               className="object-cover object-center"

@@ -42,7 +42,7 @@ export default function SignInPage() {
           {/* LEFT: Sign-in card */}
           <section className="bg-white border border-purple-100 shadow-sm rounded-2xl p-6 md:p-8">
             <p className="text-xs font-semibold tracking-[0.2em] text-brand-primary uppercase mb-2">
-              Sign in to WedFlex
+              Sign in to WedFlexer Account
             </p>
             <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
               Let&apos;s grab your account.
@@ -101,35 +101,36 @@ export default function SignInPage() {
 
           {/* RIGHT: Brand / info column */}
           <aside className="space-y-4 md:space-y-6">
-            {/* Gradient brand card */}
-            <div className="rounded-3xl bg-gradient-to-b from-brand-primary/3 via-brand-primary/2 to-brand-primary text-white p-6 md:p-8 shadow-lg flex flex-col justify-between min-h-[220px]">
-              <div className="space-y-2">
-                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-brand-primary">
-                  WedFlex is live in your city...
-                </p>
-                <h2 className="text-xl md:text-2xl font-extrabold">
-                  You don&apos;t want to miss this.
-                </h2>
-              </div>
-
-              <ul className="mt-4 space-y-1.5 text-sm text-brand-primary-dark">
-                <li>• Browse offers from couples in your city.</li>
-                <li>• Choose the gigs that fit your schedule and skills.</li>
-                <li>• Get paid securely through WedFlex after each event.</li>
-              </ul>
-
-              <p className="mt-4 text-xs text-purple-100/80">
-                Built for locals, not traditional vendors. Turn your talents into
-                cash helping couples get married.
-              </p>
-            </div>
-
             {/* Security / reassurance card */}
             <div className="rounded-2xl border border-purple-100 bg-white/80 backdrop-blur p-4 text-xs md:text-sm text-slate-700 shadow-sm">
               <h3 className="font-semibold text-slate-900 mb-1">
-                Secure, one-time sign in 🔐
+                Join the Revolution with this secure, one-time sign in 🔐
               </h3>
                         </div>
+                        
+            {/* Gradient brand card */}
+            <div className="rounded-3xl bg-brand-primary text-white p-6 md:p-8 shadow-lg flex flex-col justify-between min-h-[220px]">
+              <div className="space-y-2">
+                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white">
+                  Learn more about the WedFlex Revolution
+                </p>
+                <h2 className="text-xl md:text-2xl font-extrabold">
+                  WedFlex is putting an end to overpriced weddings❌
+                </h2>
+              </div>
+
+              <ul className="mt-4 space-y-1.5 text-sm text-white list-none">
+                <li>💍We believe getting married should not cause financial stress.</li>
+                <li>🏘️We believe successful marriages are the foundation of successful communities</li>
+                <li>🛡️We prioritize trust and safety for couples and WedFlexers</li>
+              </ul>
+
+              <p className="mt-4 text-xs text-purple-100/80">
+                WedFlex is for Marriage and Community. 
+              </p>
+            </div>
+
+            
           </aside>
         </div>
       </div>
