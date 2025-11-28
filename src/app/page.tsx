@@ -60,7 +60,7 @@ export default function HomePage() {
         {/* Right column: wedding image */}
         <div className="relative h-72 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg">
           <Image
-            src="public/images/WedFlexers-helping-a-couple.png"
+            src="/public/images/WedFlexers-helping-a-couple.png"
             alt="WedFlexers helping a couple"
             width = {2000}
             height= {1200}

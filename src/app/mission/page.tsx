@@ -1,71 +1,158 @@
+// app/mission/page.tsx
+
+import Image from "next/image";
+import Link from "next/link";
+
 export default function MissionPage() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-16 text-slate-900">
-      <h1 className="text-4xl font-bold text-purple-700 mb-6">
-        WedFlex is for Marriage and Community.
-      </h1>
-
-      <p className="text-lg leading-relaxed text-slate-700 mb-8">
-        At WedFlex, we believe that the cost of a wedding should not
-          be a financial burden that marks the beginning of a marriage.
-      </p>
-
-      <div className="space-y-4 text-slate-800 text-base leading-relaxed">
-        <p>
-          We know in our core that successful marriages 
-          are the foundation of successful communities. But recently the wedding industry has become
-          excessively overpriced. The industry has forgotten that supporting marriage is the whole point. 
-           </p>
-
-          <p className="space-y-4 text-lg font-bold text-slate-700 mb-8">
-          The Wedding Tax ❌
-       
-        Through research on the cost of weddings, we uncovered the &quot;Wedding Tax&quot;. The wedding tax is not an actual tax, but it is the very real 30-60% markup
-          that traditional wedding vendors charge for services simply because it is a wedding. Couples who want to get married deserve better. 
-          
-          Everything we do at WedFlex is centered around eliminating the Wedding Tax and fixing the overpriced wedding industry for good.
-          We will pursue these values passionately and with urgency...for marriage and community. 👊 
-
-<p className="space-y-4 text-lg leading-relaxed text-slate-700 mb-8">
-          Our Values
+    <main className="bg-white">
+      {/* Hero / intro */}
+      <section className="max-w-4xl mx-auto px-4 py-10 md:py-14">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-purple-700">
+          WedFlex is for Marriage and Community.
+        </h1>
+        <p className="mt-4 text-base md:text-lg text-slate-700">
+          At WedFlex, we believe that the cost of a wedding should not be a financial
+          burden that marks the beginning of a marriage.
         </p>
-<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {[
-            "Getting married should not cause financial stress.",
-            "Successful marriages are the foundation of successful communities",
-            "Prioritize trust and safety for Couples and WedFlexers",
-            ].map((label) => (
-            <div
-              key={label}
-              className="border rounded-2xl px-3 py-4 bg-slate-50 flex items-start gap-2 text-sm"
-            >
-              <span className="mt-1 inline-block h-2 w-2 rounded-full bg-purple-500" />
-              <span>{label}</span>
-            </div>
-          ))}
+      </section>
+
+      {/* Two-column: mission + Wedding Tax story */}
+      <section className="max-w-6xl mx-auto px-4 pb-12 md:pb-16 grid gap-10 md:grid-cols-2 items-start">
+        {/* Left: copy */}
+        <div className="space-y-4 text-sm md:text-base text-slate-700">
+          <p>
+            We know in our core that successful marriages are the foundation of successful
+            communities. But recently the wedding industry has become excessively
+            overpriced. The industry has forgotten that supporting real marriages is the whole
+            point.
+          </p>
+
+          <p className="text-xs font-semibold tracking-[0.2em] text-purple-600 uppercase pt-2">
+            The Wedding Tax ❌
+          </p>
+
+          <p>
+            Through research on the cost of weddings, we uncovered the &quot;Wedding
+            Tax&quot;. The wedding tax is not an actual tax, but it is the very real
+            30-60% markup that traditional wedding vendors charge for services simply
+            because it is a wedding. Couples who want to get married deserve better.
+          </p>
+
+          <p>
+            Everything we do at WedFlex is centered around eliminating the Wedding Tax and
+            fixing the overpriced wedding industry for good. We will pursue these values
+            passionately and with urgency… for marriage and community. 👊
+          </p>
         </div>
-        </p>
 
-        <p className="text-lg font-bold text-purple-700 mb-8">
-          Join the WedFlex Revolution Today!
-        </p>
-      </div>
+        {/* Right: image card */}
+        <div className="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg">
+          <Image
+            src="public/images/Weddings-are-a-ripoff.png"
+            alt="Influencers are sick of it"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      </section>
 
-      <div className="mt-12 flex flex-wrap gap-4">
-        <a
-          href="www.wedflex.com"
-          className="border border-purple-700 text-purple-700 text-sm font-medium px-5 py-3 rounded-md hover:bg-purple-50"
-        >
-          WedFlex Your Wedding →
-        </a>
-        
-        <a
-          href="/earn-money"
-          className="border border-purple-700 text-purple-700 text-sm font-medium px-5 py-3 rounded-md hover:bg-purple-50"
-        >
-          Become a WedFlexer →
-        </a>
-      </div>
+      {/* Values section */}
+      <section className="max-w-6xl mx-auto px-4 pb-12 md:pb-16">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+            Our Values
+          </h2>
+          <p className="mt-2 text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
+            These are the convictions that shape how we build WedFlex for couples,
+            WedFlexers, and the communities we serve.
+          </p>
+        </div>
+
+        <div className="grid gap-4 md:gap-6 md:grid-cols-3">
+          {/* Value 1 */}
+          <div className="border rounded-2xl p-5 bg-white shadow-sm flex flex-col gap-2">
+            <div className="text-2xl">💜</div>
+            <h3 className="font-semibold text-slate-900">
+              Getting married should not cause financial stress.
+            </h3>
+            <p className="text-sm text-slate-700">
+              We believe every couple deserves to start marriage on a strong foundation,
+              not under the weight of wedding debt or unfair markups.
+            </p>
+          </div>
+
+          {/* Value 2 */}
+          <div className="border rounded-2xl p-5 bg-white shadow-sm flex flex-col gap-2">
+            <div className="text-2xl">🏡</div>
+            <h3 className="font-semibold text-slate-900">
+              Successful marriages are the foundation of successful communities.
+            </h3>
+            <p className="text-sm text-slate-700">
+              When couples thrive, families, neighborhoods, and future generations thrive
+              too. This belief has our whole heart.
+            </p>
+          </div>
+
+          {/* Value 3 */}
+          <div className="border rounded-2xl p-5 bg-white shadow-sm flex flex-col gap-2">
+            <div className="text-2xl">🛡️</div>
+            <h3 className="font-semibold text-slate-900">
+              Prioritize trust and safety for Couples and WedFlexers.
+            </h3>
+            <p className="text-sm text-slate-700">
+              We center transparency, secure payments, and respectful behavior so both
+              couples and WedFlexers feel protected and valued.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Community image strip */}
+      <section className="max-w-5xl mx-auto px-4 pb-12 md:pb-16">
+        <div className="relative h-64 md:h-80 rounded-3xl overflow-hidden shadow-lg">
+          <Image
+            src="/public/images/WedFlex-in-action.png"
+            alt="Community of WedFlexers supporting a wedding"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <p className="mt-3 text-center text-sm text-slate-600">
+          Real weddings. Real people. Real community. WedFlex connects couples with
+          talented locals to bring their vision to life.
+        </p>
+      </section>
+
+      {/* Purple CTA band */}
+      <section className="w-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white">
+        <div className="max-w-6xl mx-auto px-4 py-10 md:py-14 text-center">
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-2">
+            Join the WedFlex Revolution Today!
+          </h2>
+          <p className="max-w-2xl mx-auto text-sm md:text-base text-purple-100">
+            Whether you&apos;re planning a wedding or ready to earn money as a WedFlexer,
+            you can help eliminate the Wedding Tax ❌ and support marriages in your
+            community.
+          </p>
+
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link
+              href="https://wedflex-couples.vercel.app"
+              className="inline-flex items-center rounded-xl px-6 py-3 text-sm font-semibold bg-white text-purple-700 hover:bg-purple-50 shadow-md"
+            >
+              WedFlex Your Wedding →
+            </Link>
+            <Link
+              href="/earn-money"
+              className="inline-flex items-center rounded-xl px-6 py-3 text-sm font-semibold border border-white/80 text-white hover:bg-white/10"
+            >
+              Become a WedFlexer →
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
