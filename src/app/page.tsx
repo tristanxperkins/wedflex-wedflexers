@@ -42,8 +42,8 @@ export default function HomePage() {
             <div className="border rounded-2xl p-4 shadow-xs bg-white">
               <h3 className="font-semibold mb-2">Who Are WedFlexers?</h3>
               <p className="text-sm text-slate-700">
-                WedFlexers are talented locals – not traditional vendors. Students, hobbyists,
-                retirees, and creatives helping couples get married without industry markup.
+                Join hundreds of WedFlexers who are making money off of weddings right now. They're entreprenuers, retirees, crafters, 
+                Type-A organizers, teachers, servers, bartenders, speakers, creatives, and more. All you need is a skillset that would be useful to help couples get married.
               </p>
             </div>
 
