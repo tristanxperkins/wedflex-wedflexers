@@ -35,13 +35,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       {/* brand base colors */}
       <body className="bg-white text-brand-charcoal font-sans">
         {/* Single, sticky, white nav row */}
-<header className="sticky top-0 z-50 bg-white/90 backdrop-blur">
           <div className="max-w-6xl mx-auto px-4 py-3">
             <Nav />
           </div>
-        </header>
-
-        <main className="min-h-screen">
+                <main className="min-h-screen">
           {children}
         </main>
 
