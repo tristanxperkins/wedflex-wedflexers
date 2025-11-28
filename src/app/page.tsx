@@ -16,7 +16,9 @@ export default function HomePage() {
           </h2>
 
           <p className="text-brand-charcoal mb-6 max-w-xl">
-            Hundreds of everyday people in your community are monetizing their skills on WedFlex. You can, too. Become a WedFlexer right now.
+              WedFlex connects real couples with talented locals for wedding service instead of 
+              going to traditional overpriced wedding vendors.
+              Become a WedFlexer right now and start earning money.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">
@@ -40,10 +42,9 @@ export default function HomePage() {
 <div className="border rounded-2xl p-4 shadow-xs bg-white">
               <h3 className="font-semibold mb-2">How WedFlex Works</h3>
               <p className="text-sm text-brand-charcoal">
-                WedFlex connects real couples with talented local &quot;WedFlexers&quot; to hire for wedding services.
-                <ul className="list-none space-y-2">
-                 <li>💜 Real couples post offers for wedding services</li>
-                <li>🔍 Browse and accept offers that work for them</li>
+                 <ul className="list-none space-y-2">
+                 <li>💜 Real couples post offers for wedding services they need</li>
+                <li>🔍 Browse and accept offers that work for you</li>
                 <li>💵 Deliver the service and get paid securely through WedFlex</li>
                 <li>📅 Always control your income and your schedule</li>
                 </ul>
@@ -53,8 +54,19 @@ export default function HomePage() {
             <div className="border rounded-2xl p-4 shadow-xs bg-white">
               <h3 className="font-semibold mb-2">Who Are WedFlexers?</h3>
               <p className="text-sm text-brand-charcoal">
-                WedFlexers are everyday people who are making money off of weddings right now. They&apos;re entreprenuers, retirees, crafters, 
-                Type-A organizers, teachers, servers, bartenders, speakers, creatives, and more. All you need is a skillset that would be useful to help couples get married.
+                WedFlexers are everyday people that use WedFlex to make money off of weddings on their
+                schedule. WedFlexers are:
+                <ul className="list-none space-y-2">
+                <li>🎨 Crafters & DIYers</li>
+<li>📋 Type-A organizers and party planners</li>
+<li>📸 Photographers & Content Creators</li>
+<li>🍹 Servers & Bartenders</li>
+<li>🍰 Chefs & Bakers </li>
+<li>🎵 Musicians & Music Aficionados</li>
+<li>🚀 Entrepreneurs & Side Hustlers</li>
+<li>💰 Anyone with a skill they want to monetize</li>
+
+                </ul>
               </p>
             </div>
           </div>
@@ -80,9 +92,7 @@ export default function HomePage() {
           </h1>
 
           <p className="max-w-3xl mx-auto text-sm md:text-lg text-brand-charcoal">
-            WedFlex puts marriage back at the centerof the wedding industry and
-             gives everyday people the opportunity
-            to make money supporting the families in their community. It&apos;s a win-win for everyone. 
+            Help us revolutionize the wedding industry to end overpriced weddings while supporting the communities they thrive in.
           </p>
                     <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link

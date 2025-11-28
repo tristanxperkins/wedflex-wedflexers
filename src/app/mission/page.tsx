@@ -13,7 +13,7 @@ export default function MissionPage() {
         </h1>
         <p className="mt-4 text-base md:text-lg text-brand-charcoal">
           We believe that the cost of a wedding should not be a financial
-          burden that marks the beginning of a marriage.
+          burden to mark the beginning of a marriage.
         </p>
       </section>
 
