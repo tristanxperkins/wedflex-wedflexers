@@ -9,6 +9,7 @@ const wedflexerItems = [
   { href: "/dashboard/wedflexer/calendar", label: "Calendar" },
   { href: "/dashboard/wedflexer/earnings", label: "Earnings" },
   { href: "/dashboard/wedflexer/messages", label: "Messages" },
+  { href: "/feed", label: "Browse Offers" },
 ];
 
 export default function DashboardSidebar() {

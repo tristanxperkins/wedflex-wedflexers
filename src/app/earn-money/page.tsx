@@ -93,22 +93,30 @@ export default function EarnMoneyPage() {
           How to become a wedFlexer
         </p>
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-          Who are WedFlexers?
+          Want to Make Money off of Weddings?
         </h1>
         <p className="text-slate-600 max-w-2xl">
-          Be the local hero behind someone&apos;s best day. WedFlex connects real couples
-          with real people, not traditional vendors, for creative, flexible wedding work.
-          Control what you earn and on your own time.
-        </p>
+          WedFlex is how you monetize your skills, make your own schedule, and control what you earn. 
+          Sign up to become a WedFlexer and start earning money by 
+          offering any wedding service to help couples in your community get married. 
+          Are you known as the friend with the best playlist?
+          Or the Type-A organizes that throws the best parties? 
+          Do you have an eye for design or a 
+          space you could rent? Whether you've been playing violin since high school
+           or you have an infamous cupcake recipe, join WedFlex to start monetizing it today.
+                   </p>
       </header>
 
       {/* Who are WedFlexers? */}
       <section className="space-y-4">
         <h2 className="text-xl font-semibold text-slate-900">Who are WedFlexers?</h2>
         <p className="text-slate-600 max-w-2xl">
-          WedFlexers are talented locals not traditional wedding vendors. WedFlexers are
-          neighbors, college students, hobbyists, and side-hustlers using their skills to
-          help couples get married without the high markup of traditional vendors.
+          Hundreds of WedFlexers are everyday people
+          who are making money off of weddings right now. 
+          All you need to get started is a skill that can help couples get married.
+        WedFlexers can be entreprenuers, retirees, crafters, teachers, waiters and bartenders, 
+          side hustlers, creatives, and more. 
+           
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -116,8 +124,8 @@ export default function EarnMoneyPage() {
             "People with a passion for photography",
             "Friends known for the best playlists",
             "Locals with an eye for floral design",
-            "Home cooks who love feeding people",
             "Confident public speakers and MCs",
+            "Set up and clean up crews",
             "Venue Hosts with a great backyard or space",
             "Type-A organizers and day-of helpers",
             "DIY crafters and décor geniuses",
@@ -137,8 +145,8 @@ export default function EarnMoneyPage() {
       <section className="space-y-3">
         <h2 className="text-xl font-semibold text-slate-900">How WedFlex work works</h2>
         <ol className="list-decimal list-inside space-y-1 text-slate-600 text-sm">
-          <li>Create your WedFlexer profile and a Stripe account to get paid directly.</li>
-          <li>Browse wedding offers in your city, apply, and chat with couples to confirm details.</li>
+          <li>Create your WedFlexer profile and set up how you will get paid (Connect a Stripe Account)</li>
+          <li>Browse wedding offers from real couples in your city, apply, and chat with couples to confirm details.</li>
           <li>Get booked and track your bookings on your WedFlexer dashboard.</li>
           <li>Deliver the service and get paid the same day, minus a small platform fee.</li>
         </ol>
@@ -183,12 +191,13 @@ export default function EarnMoneyPage() {
               <ul className="list-disc list-inside space-y-1">
                 <li>You are an independent contractor, not an employee of WedFlex. As such, you are responsible for maintaining any required licenses relevant for your county or state (for example, officiants must be legally ordained).</li>
                 <li>
-                  You agree to show up on time, perform the work you agreed to, and
+                  You agree to show up on time, perform the work you agreed to (do not overpromise), and
                   communicate clearly with couples.
                 </li>
                 <li>
                   Payments are processed through WedFlex and Stripe; payouts are sent to your
-                  connected bank account, minus a small service fee, on the day of the service, after the service is complete.
+                  connected bank account, minus a small service fee, on the day you deliver the service. If you offer multiple delivery dates, such as a trial or tasting and then the final service, you are paid on the day you deliver 
+                  the final service if the couple decides to use your services. 
                 </li>
                 <li>
                   You agree to our community standards, including professionalism, respect, and

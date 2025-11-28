@@ -101,11 +101,11 @@ export default function SignInPage() {
             You don&apos;t want to miss this.
           </h1>
 
-          <p className="max-w-3xl mx-auto text-sm md:text-lg text-purple-100">
+          <p className="max-w-6xl mx-auto px-4 py-12 grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-center">
             WedFlex has launched in your city and that means things are about to get crazy.
             The wedding industry has been overpriced and unfair to couples for far too long. 
             WedFlex is a revolution that puts marriage back at the center of the industry and puts money
-            in the pockets where marriages happen. Join us. Become a WedFlexer to make money off of weddings. 
+            in the communities where marriages happen. Join us. Become a WedFlexer to make money off of weddings. 
           </p>
         </div>
       </section>
