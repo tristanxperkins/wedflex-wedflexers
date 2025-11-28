@@ -81,7 +81,7 @@ export default function HomePage() {
              gives everyday people the opportunity
             to make money supporting the families in their community. It&apos;s a win-win for everyone. 
           </p>
-                    <div className="flex flex-wrap gap-3 mb-8">
+                    <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               href="/earn-money"
               className="inline-flex items-center rounded-lg px-5 py-2.5 text-sm font-semibold bg-brand-primary text-white hover:bg-brand-primary-dark"

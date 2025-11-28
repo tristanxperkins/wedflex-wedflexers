@@ -12,7 +12,7 @@ export default function MissionPage() {
           WedFlex is for Marriage and Community.
         </h1>
         <p className="mt-4 text-base md:text-lg text-slate-700">
-          At WedFlex, we believe that the cost of a wedding should not be a financial
+          We believe that the cost of a wedding should not be a financial
           burden that marks the beginning of a marriage.
         </p>
       </section>
@@ -53,7 +53,7 @@ export default function MissionPage() {
             alt="Influencers are sick of it"
             fill
             className="object-cover object-top"
-            priority
+            style={{objectPosition:"50% 50%"}}//xy
           />
         </div>
       </section>
@@ -116,7 +116,8 @@ export default function MissionPage() {
             src="/images/WedFlex-and-a-couple.png"
             alt="Community of WedFlexers supporting a wedding"
             fill
-            className="object-cover object-top"
+            className="object-cover"
+            style={{objectPosition:"50% 50%"}}//xy
           />
         </div>
         <p className="mt-3 text-center text-sm text-slate-600">
