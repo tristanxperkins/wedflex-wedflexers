@@ -28,7 +28,7 @@ export default function MissionPage() {
             point.
           </p>
 
-          <p className="text-xs font-semibold tracking-[0.2em] text-brand-primary-dark uppercase pt-2">
+          <p className="text-sm font-semibold tracking-[0.2em] text-brand-primary-dark uppercase pt-2">
             The Wedding Tax ❌
           </p>
 
