@@ -28,11 +28,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex items-center gap-2 text-left">
               <span className="font-bold text-lg">WedFlex</span>
               <span className="opacity-90">
-                On a mission to make weddings affordable.
+                For Marriage and Community.
               </span>
             </div>
             <span className="opacity-80 text-xs md:text-sm text-right">
-              © {2025} WedFlex. Built for Marriage and Community.
+              © {2025} WedFlex. 
             </span>
           </div>
         </footer>

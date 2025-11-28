@@ -16,8 +16,7 @@ export default function HomePage() {
           </h2>
 
           <p className="text-slate-700 mb-6 max-w-xl">
-            Turn your talents into cash helping couples in your community get married.
-            Become a WedFlexer today to start earning money.
+            Hundreds of everyday people in your community are monetizing their skills on WedFlex. You can become a WedFlexer right now!
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">
@@ -42,7 +41,7 @@ export default function HomePage() {
             <div className="border rounded-2xl p-4 shadow-xs bg-white">
               <h3 className="font-semibold mb-2">Who Are WedFlexers?</h3>
               <p className="text-sm text-slate-700">
-                Join hundreds of WedFlexers who are making money off of weddings right now. They&apos;re entreprenuers, retirees, crafters, 
+                WedFlexers are everyday people who are making money off of weddings right now. They&apos;re entreprenuers, retirees, crafters, 
                 Type-A organizers, teachers, servers, bartenders, speakers, creatives, and more. All you need is a skillset that would be useful to help couples get married.
               </p>
             </div>
