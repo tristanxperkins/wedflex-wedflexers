@@ -42,7 +42,7 @@ export default function HomePage() {
             <div className="border rounded-2xl p-4 shadow-xs bg-white">
               <h3 className="font-semibold mb-2">Who Are WedFlexers?</h3>
               <p className="text-sm text-slate-700">
-                Join hundreds of WedFlexers who are making money off of weddings right now. They're entreprenuers, retirees, crafters, 
+                Join hundreds of WedFlexers who are making money off of weddings right now. They&apos;re entreprenuers, retirees, crafters, 
                 Type-A organizers, teachers, servers, bartenders, speakers, creatives, and more. All you need is a skillset that would be useful to help couples get married.
               </p>
             </div>
@@ -81,7 +81,7 @@ export default function HomePage() {
           <p className="max-w-3xl mx-auto text-sm md:text-lg text-purple-100">
             Imagine a world where the wedding industry was actually about marriage. 
             WedFlex puts marriage back at the center and gives everyday people the opportunity
-            to make money supporting the families in their community. It's a win-win for everyone. 
+            to make money supporting the families in their community. It&apos;s a win-win for everyone. 
           </p>
         </div>
       </section>
