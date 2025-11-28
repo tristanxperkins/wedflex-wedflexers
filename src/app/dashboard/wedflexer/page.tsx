@@ -61,7 +61,7 @@ export default function WedflexerDashboardPage() {
   return (
     <RequireAuth>
       <main className="max-w-6xl mx-auto p-6 grid gap-6 lg:grid-cols-[240px_1fr]">
-        <DashboardSidebar role="wedflexer" />
+        <DashboardSidebar />
 
         <section className="space-y-6">
           <header className="flex items-center justify-between gap-4">
