@@ -123,7 +123,7 @@ export default function WedFlexerHome() {
         {/* SECTION 3: EARNINGS SECTION */}
         {/* ------------------------------------------------------------ */}
         <section className="grid gap-10 lg:grid-cols-[1fr_1.1fr] items-center">
-  {/* RIGHT: PERKS GRID */}
+  {/* Left: PERKS GRID */}
   <div className="space-y-4">
     <h2 className="text-xl md:text-2xl font-bold text-brand-primary">
       WedFlexer Perks
@@ -166,6 +166,15 @@ export default function WedFlexerHome() {
       *Offers are set by couples and vary by offer and location. Platform fees apply.
     </p>
   </div>
+  {/* RIGHT IMAGE */}
+          <div className="relative h-[250px] md:h-[320px] rounded-3xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/wedflex-earnings.jpg"
+              alt="WedFlexer earning money helping with a wedding"
+              fill
+              className="object-cover object-center"
+            />
+          </div>
 </section>
 
         {/* ------------------------------------------------------------ */}
