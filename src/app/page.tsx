@@ -78,6 +78,7 @@ export default function WedFlexerHome() {
               alt="Monique from Atlanta coordinates the day"
               fill
               className="object-cover object-center"
+              style={{objectPosition:"65% 50%"}}//xy
               priority
             />
           </div>
@@ -90,11 +91,13 @@ export default function WedFlexerHome() {
           {/* LEFT - HOW IT WORKS */}
           <div className="rounded-3xl border border-brand-primary/20 p-6 shadow-sm bg-white">
             <h3 className="text-lg font-bold text-brand-primary">How WedFlex Works</h3>
+            <p className="text-sm text-brand-charcoal"> WedFlex brings couples to the </p>
             <ul className="space-y-2 mt-3 text-brand-charcoal text-sm leading-relaxed list-none">
               <li>💜 Real couples post offers for services</li>
               <li>🧐 Browse and accept offers that match your skills</li>
               <li>💸 Deliver the service and get paid through WedFlex</li>
               <li>📅 Always control your schedule and income</li>
+              
             </ul>
           </div>
 
@@ -163,7 +166,7 @@ export default function WedFlexerHome() {
           {/* RIGHT IMAGE */}
           <div className="relative h-[250px] md:h-[320px] rounded-3xl overflow-hidden shadow-lg">
             <Image
-              src="/images/WedFlexer-Collage.png"
+              src="/images/WedFlexer-Collage-Design.png"
               alt="WedFlexers collage"
               fill
               className="object-cover object-center"
