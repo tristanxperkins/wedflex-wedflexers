@@ -19,7 +19,7 @@ export default function MissionPage() {
           <p className="text-lg leading-relaxed text-slate-700 mb-8">
           The Wedding Tax ❌
         </p>
-        Through research on the cost of weddings, we uncovered the "Wedding Tax". The wedding tax is not an actual tax, but it is the very real 30-60% markup
+        Through research on the cost of weddings, we uncovered the &quot;Wedding Tax&quot;. The wedding tax is not an actual tax, but it is the very real 30-60% markup
           that traditional wedding vendors charge for services simply because it is a wedding. Couples who want to get married deserve better. 
           
           Everything we do at WedFlex is centered around eliminating the Wedding Tax and fixing the overpriced wedding industry for good.
