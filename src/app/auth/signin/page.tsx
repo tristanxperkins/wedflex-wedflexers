@@ -41,7 +41,7 @@ export default function SignInPage() {
         <div className="grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-start">
           {/* LEFT: Sign-in card */}
           <section className="bg-white border border-purple-100 shadow-sm rounded-2xl p-6 md:p-8">
-            <p className="text-xs font-semibold tracking-[0.2em] text-purple-600 uppercase mb-2">
+            <p className="text-xs font-semibold tracking-[0.2em] text-brand-primary uppercase mb-2">
               Sign in to WedFlex
             </p>
             <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
@@ -80,7 +80,7 @@ export default function SignInPage() {
                 <button
                   type="submit"
                   disabled={sending || !email}
-                  className="inline-flex items-center justify-center rounded-lg px-5 py-2.5 text-sm font-semibold bg-purple-700 text-white shadow-md disabled:opacity-60 hover:bg-purple-800 transition-colors"
+                  className="inline-flex items-center justify-center rounded-lg px-5 py-2.5 text-sm font-semibold boarder-brand-primary text-brand-primary shadow-md disabled:opacity-60 hover:bg-brand-primary/5 transition-colors"
                 >
                   {sending ? "Sending magic link…" : "Send one-time sign in link"}
                 </button>
@@ -102,17 +102,17 @@ export default function SignInPage() {
           {/* RIGHT: Brand / info column */}
           <aside className="space-y-4 md:space-y-6">
             {/* Gradient brand card */}
-            <div className="rounded-3xl bg-gradient-to-b from-purple-500 via-purple-600 to-purple-700 text-white p-6 md:p-8 shadow-lg flex flex-col justify-between min-h-[220px]">
+            <div className="rounded-3xl bg-gradient-to-b from-brand-primary/3 via-brand-primary/2 to-brand-primary text-white p-6 md:p-8 shadow-lg flex flex-col justify-between min-h-[220px]">
               <div className="space-y-2">
-                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-purple-100">
-                  WedFlexer perks
+                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-brand-primary">
+                  WedFlex is live in your city...
                 </p>
                 <h2 className="text-xl md:text-2xl font-extrabold">
                   You don&apos;t want to miss this.
                 </h2>
               </div>
 
-              <ul className="mt-4 space-y-1.5 text-sm text-purple-100/90">
+              <ul className="mt-4 space-y-1.5 text-sm text-brand-primary-dark">
                 <li>• Browse offers from couples in your city.</li>
                 <li>• Choose the gigs that fit your schedule and skills.</li>
                 <li>• Get paid securely through WedFlex after each event.</li>
@@ -129,11 +129,7 @@ export default function SignInPage() {
               <h3 className="font-semibold text-slate-900 mb-1">
                 Secure, one-time sign in 🔐
               </h3>
-              <p>
-                We use passwordless magic links powered by Supabase. Your email is
-                only used to authenticate you into your WedFlexer account.
-              </p>
-            </div>
+                        </div>
           </aside>
         </div>
       </div>

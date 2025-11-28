@@ -11,25 +11,25 @@ export default function HomePage() {
         
         {/* Left column: messaging + CTAs + cards */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-purple-700 mb-3">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-brand-primary mb-3">
             Join WedFlex to start making money off of weddings.
           </h2>
 
-          <p className="text-slate-700 mb-6 max-w-xl">
+          <p className="text-brand-charcoal mb-6 max-w-xl">
             Hundreds of everyday people in your community are monetizing their skills on WedFlex. You can, too. Become a WedFlexer right now.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">
             <Link
               href="/earn-money"
-              className="inline-flex items-center rounded-lg px-5 py-2.5 text-sm font-semibold bg-purple-700 text-white hover:bg-purple-800"
+              className="inline-flex items-center rounded-lg px-5 py-2.5 text-sm font-semibold bg-brand-primary text-white hover:bg-brand-primary-dark"
             >
               Start earning money
             </Link>
 
             <Link
               href="/auth/signin?role=wedflexer&next=/dashboard"
-              className="inline-flex items-center rounded-lg px-5 py-2.5 text-sm font-semibold border border-purple-700 text-purple-700 hover:bg-purple-50"
+              className="inline-flex items-center rounded-lg px-5 py-2.5 text-sm font-semibold border border-brand-primary text-brand-primary hover:bg-brand-primary/5"
             >
               Already a WedFlexer? Sign in!
             </Link>
