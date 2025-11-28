@@ -101,13 +101,7 @@ export default function SignInPage() {
 
           {/* RIGHT: Brand / info column */}
           <aside className="space-y-4 md:space-y-6">
-            {/* Security / reassurance card */}
-            <div className="rounded-2xl border border-purple-100 bg-white/80 backdrop-blur p-4 text-xs md:text-sm text-slate-700 shadow-sm">
-              <h3 className="font-semibold text-slate-900 mb-1">
-                Join the Revolution with this secure, one-time sign in 🔐
-              </h3>
-                        </div>
-                        
+                                    
             {/* Gradient brand card */}
             <div className="rounded-3xl bg-brand-primary text-white p-6 md:p-8 shadow-lg flex flex-col justify-between min-h-[220px]">
               <div className="space-y-2">
@@ -124,12 +118,13 @@ export default function SignInPage() {
                 <li>🏘️We believe successful marriages are the foundation of successful communities</li>
                 <li>🛡️We prioritize trust and safety for couples and WedFlexers</li>
               </ul>
-
-              <p className="mt-4 text-xs text-purple-100/80">
-                WedFlex is for Marriage and Community. 
-              </p>
             </div>
-
+{/* Security / reassurance card */}
+            <div className="rounded-2xl border border-purple-100 bg-white/80 backdrop-blur p-4 text-xs md:text-sm text-slate-700 shadow-sm">
+              <h3 className="font-semibold text-slate-900 mb-1">
+                Join the Revolution with this secure, one-time sign in 🔐
+              </h3>
+                        </div>
             
           </aside>
         </div>
