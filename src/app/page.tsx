@@ -123,16 +123,6 @@ export default function WedFlexerHome() {
         {/* SECTION 3: EARNINGS SECTION */}
         {/* ------------------------------------------------------------ */}
         <section className="grid gap-10 lg:grid-cols-[1fr_1.1fr] items-center">
-  {/* LEFT IMAGE */}
-  <div>
-    <Image
-      src="/images/WedFlexer-Collage-Design.png"
-      alt="WedFlexers collage"
-      fill
-      className="object-cover object-center"
-    />
-  </div>
-
   {/* RIGHT: PERKS GRID */}
   <div className="space-y-4">
     <h2 className="text-xl md:text-2xl font-bold text-brand-primary">
