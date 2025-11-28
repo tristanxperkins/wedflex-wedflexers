@@ -124,7 +124,7 @@ export default function WedFlexerHome() {
         {/* ------------------------------------------------------------ */}
         <section className="grid gap-10 lg:grid-cols-[1fr_1.1fr] items-center">
   {/* LEFT IMAGE */}
-  <div className="relative h-[300px] md:h-[380px] lg:h-[420px] rounded-3xl overflow-hidden shadow-xl">
+  <div>
     <Image
       src="/images/WedFlexer-Collage-Design.png"
       alt="WedFlexers collage"
