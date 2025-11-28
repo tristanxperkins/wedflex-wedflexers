@@ -96,13 +96,13 @@ export default function EarnMoneyPage() {
           Want to Make Money off of Weddings?
         </h1>
         <p className="text-slate-600 max-w-2xl">
-          WedFlex is how you monetize your skills, make your own schedule, and control what you earn. 
+          WedFlex is how monetize your skills, make your own schedule, and control what you earn. 
           Sign up to become a WedFlexer and start earning money by 
           offering any wedding service to help couples in your community get married. 
           Are you known as the friend with the best playlist?
           Or the Type-A organizes that throws the best parties? 
           Do you have an eye for design or a 
-          space you could rent? Whether you've been playing violin since high school
+          space you could rent? Whether you&apos;ve been playing violin since high school
            or you have an infamous cupcake recipe, join WedFlex to start monetizing it today.
                    </p>
       </header>
