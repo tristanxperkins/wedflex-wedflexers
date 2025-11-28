@@ -12,7 +12,7 @@ export default function HomePage() {
         {/* Left column: messaging + CTAs + cards */}
         <div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-purple-700 mb-3">
-            You can make money off of weddings.
+            Join WedFlex to start making money off of weddings.
           </h2>
 
           <p className="text-slate-700 mb-6 max-w-xl">
@@ -79,11 +79,24 @@ export default function HomePage() {
           </h1>
 
           <p className="max-w-3xl mx-auto text-sm md:text-lg text-purple-100">
-            Imagine a world where the wedding industry was actually about marriage. 
-            WedFlex puts marriage back at the center and gives everyday people the opportunity
+            WedFlex puts marriage back at the centerof the wedding industry and
+             gives everyday people the opportunity
             to make money supporting the families in their community. It&apos;s a win-win for everyone. 
           </p>
-        </div>
+                    <Link
+              href="/earn-money"
+              className="inline-flex items-center rounded-lg px-5 py-2.5 text-sm font-semibold bg-purple-700 text-white hover:bg-purple-800"
+            >
+              Start earning money
+            </Link>
+
+            <Link
+              href="/auth/signin?role=wedflexer&next=/dashboard"
+              className="inline-flex items-center rounded-lg px-5 py-2.5 text-sm font-semibold border border-purple-700 text-purple-700 hover:bg-purple-50"
+            >
+              Already a WedFlexer? Sign in!
+            </Link>
+          </div>
       </section>
     </>
   );
