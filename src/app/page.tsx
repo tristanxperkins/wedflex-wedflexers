@@ -40,11 +40,13 @@ export default function HomePage() {
 <div className="border rounded-2xl p-4 shadow-xs bg-white">
               <h3 className="font-semibold mb-2">How WedFlex Works</h3>
               <p className="text-sm text-brand-charcoal">
-                WedFlex connects real couples with WedFlexers to hire for wedding services.
-                <li>💜 Real couples post offers for wedding services</li>
+                WedFlex connects real couples with talented local &quot;WedFlexers&quot; to hire for wedding services.
+                <ul className="list-none space-y-2">
+                 <li>💜 Real couples post offers for wedding services</li>
                 <li>🔍 Browse and accept offers that work for them</li>
                 <li>💵 Deliver the service and get paid securely through WedFlex</li>
                 <li>📅 Always control your income and your schedule</li>
+                </ul>
               </p>
             </div>
 
