@@ -42,7 +42,7 @@ export default function MissionPage() {
           <p>
             Everything we do at WedFlex is centered around eliminating the Wedding Tax and
             fixing the overpriced wedding industry for good. We will pursue these values
-            passionately and with urgency… for marriage and community. 👊
+            passionately and with urgency… for marriage and community.
           </p>
         </div>
 

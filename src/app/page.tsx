@@ -37,23 +37,24 @@ export default function HomePage() {
 
           {/* Two info cards */}
           <div className="grid gap-4 md:grid-cols-2">
+<div className="border rounded-2xl p-4 shadow-xs bg-white">
+              <h3 className="font-semibold mb-2">How WedFlex Works</h3>
+              <p className="text-sm text-brand-charcoal">
+                WedFlex connects real couples with WedFlexers to hire for wedding services.
+                <li>💜 Real couples post offers for wedding services</li>
+                <li>🔍 Browse and accept offers that work for them</li>
+                <li>💵 Deliver the service and get paid securely through WedFlex</li>
+                <li>📅 Always control your income and your schedule</li>
+              </p>
+            </div>
 
             <div className="border rounded-2xl p-4 shadow-xs bg-white">
               <h3 className="font-semibold mb-2">Who Are WedFlexers?</h3>
-              <p className="text-sm text-slate-700">
+              <p className="text-sm text-brand-charcoal">
                 WedFlexers are everyday people who are making money off of weddings right now. They&apos;re entreprenuers, retirees, crafters, 
                 Type-A organizers, teachers, servers, bartenders, speakers, creatives, and more. All you need is a skillset that would be useful to help couples get married.
               </p>
             </div>
-
-            <div className="border rounded-2xl p-4 shadow-xs bg-white">
-              <h3 className="font-semibold mb-2">How WedFlex Works</h3>
-              <p className="text-sm text-slate-700">
-                Browse offers from couples, accept the ones that work for you,
-                show up, help out, and get paid securely right through WedFlex.
-              </p>
-            </div>
-
           </div>
         </div>
 
