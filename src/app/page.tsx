@@ -74,7 +74,7 @@ export default function WedFlexerHome() {
           {/* RIGHT IMAGE */}
           <div className="relative h-[300px] md:h-[380px] lg:h-[420px] rounded-3xl overflow-hidden shadow-xl">
             <Image
-              src="/images/Monique-Coordinating.png"
+              src="/images/WedFlex-Coordinator.png"
               alt="Monique from Atlanta coordinates the day"
               fill
               className="object-cover object-center"
