@@ -15,7 +15,7 @@ export default function WedFlexerHome() {
           {/* LEFT */}
           <div className="space-y-7">
             <div className="space-y-3">
-              <p className="text-xs font-semibold tracking-[0.25em] text-brand-primary uppercase">
+              <p className="text-xs font-semibold tracking-[0.25em] text-brand-charcoal uppercase">
                 For WedFlexers
               </p>
 
@@ -78,8 +78,8 @@ export default function WedFlexerHome() {
           {/* RIGHT IMAGE */}
           <div className="relative h-[300px] md:h-[380px] lg:h-[420px] rounded-3xl overflow-hidden shadow-xl">
             <Image
-              src="images/Wedding Content Creator.png"
-              alt="Monique doing behind the scenes social media content"
+              src="/images/bouquet.jpg"
+              alt="Bride with bouquet"
               fill
               className="object-cover object-center"
               style={{objectPosition:"70% 50%"}}//xy
@@ -173,7 +173,7 @@ export default function WedFlexerHome() {
   {/* RIGHT IMAGE */}
           <div className="relative h-[250px] md:h-[320px] rounded-3xl overflow-hidden shadow-lg">
             <Image
-              src="/images/Setting up decor.png"
+              src="/images/wedflexerphotographer2.jpg"
               alt="WedFlexer earning money helping with a wedding"
               fill
               className="object-cover object-center"
