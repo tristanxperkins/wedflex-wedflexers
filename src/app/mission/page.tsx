@@ -53,7 +53,7 @@ export default function MissionPage() {
             alt="Influencers are sick of it"
             fill
             className="object-cover object-top"
-            style={{objectPosition:"50% 50%"}}//xy
+            style={{objectPosition:"50% 0%"}}//xy
           />
         </div>
       </section>
