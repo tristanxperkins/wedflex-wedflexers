@@ -53,20 +53,24 @@ export default function WedFlexerHome() {
 
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 rounded-full bg-brand-primary/10 text-[12px] flex items-center gap-1.5">
-                  📸 <span>Photography</span>
+                  📸 <span>Taking Pictures</span>
                 </span>
 
                 <span className="px-3 py-1 rounded-full bg-brand-primary/10 text-[12px] flex items-center gap-1.5">
-                  🍰 <span>Cakes & desserts</span>
+                  🍰 <span>Making Cakes & desserts</span>
                 </span>
 
                 <span className="px-3 py-1 rounded-full bg-brand-primary/10 text-[12px] flex items-center gap-1.5">
-                  🎤 <span>MCs & DJs</span>
+                  🎤 <span>Public Speaking & Playing Music</span>
                 </span>
 
                 <span className="px-3 py-1 rounded-full bg-brand-primary/10 text-[12px] flex items-center gap-1.5">
-                  💐 <span>Decor & florals</span>
+                  💐 <span>Making Decor & Florals</span>
                 </span>
+<span className="px-3 py-1 rounded-full bg-brand-primary/10 text-[12px] flex items-center gap-1.5">
+                  🚀 <span>Setting up & Cleaning up</span>
+                </span>
+
               </div>
             </div>
           </div>
@@ -74,8 +78,8 @@ export default function WedFlexerHome() {
           {/* RIGHT IMAGE */}
           <div className="relative h-[300px] md:h-[380px] lg:h-[420px] rounded-3xl overflow-hidden shadow-xl">
             <Image
-              src="/images/WedFlex-Coordinator.png"
-              alt="Monique from Atlanta coordinates the day"
+              src="images/Wedding Content Creator.png"
+              alt="Monique doing behind the scenes social media content"
               fill
               className="object-cover object-center"
               style={{objectPosition:"70% 50%"}}//xy
@@ -169,7 +173,7 @@ export default function WedFlexerHome() {
   {/* RIGHT IMAGE */}
           <div className="relative h-[250px] md:h-[320px] rounded-3xl overflow-hidden shadow-lg">
             <Image
-              src="/images/WedFlexer-Collage-Design.png"
+              src="/images/Setting up decor.png"
               alt="WedFlexer earning money helping with a wedding"
               fill
               className="object-cover object-center"
