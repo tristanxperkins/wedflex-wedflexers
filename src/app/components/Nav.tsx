@@ -42,7 +42,9 @@ export default function Nav() {
         <Link href="/mission" className="hover:text-purple-700">
           Mission
         </Link>
-
+<Link href="/earn-money?step=1" className="hover:text-purple-700">
+          Earn Money
+        </Link>
         {email ? (
           <>
             <Link href="/dashboard" className="hover:text-purple-700">
